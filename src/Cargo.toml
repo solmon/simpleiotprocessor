@@ -1,5 +1,7 @@
 [package]
-name = "simple iot processing sample"
+name = "simpleiotproc"
+rust-version.workspace = true 
+edition.workspace = true
 
 [dependencies]
 config = { workspace = true }
@@ -14,9 +16,9 @@ anyhow = { workspace = true }
 configparser = { workspace = true }
 serde_json = { workspace = true }
 toml = { workspace = true }
-simpleftp = { path = "crates/simpleftp" }
-rbmq = { path = "crates/rbmq" }
-ddshift = { path = "crates/ddshift" }
+simpleftp = { workspace=true }
+rbmq = { workspace=true }
+ddshift = { workspace=true }
 warp = "0.3"
 pathdiff = "0.2"
 clap =  {version = "4.5.4", features = ["cargo","derive"]}
@@ -39,16 +41,16 @@ env_logger = "0.11.3"
 
 [[bin]]
 name = "webserver"
-path = "src/simweb/server.rs"
+path = "simweb/server.rs"
 
 [[bin]]
 name = "coreweb"
-path = "src/coreweb/coreweb.rs"
+path = "coreweb/coreweb.rs"
 
 [[bin]]
 name = "xmltoqint"
-path = "src/xmltoqint/bin/main.rs"
+path = "xmltoqint/bin/main.rs"
 
 [[bin]]
 name = "pmgr"
-path = "src/pmm/pmmgr.rs"
+path = "pmm/pmmgr.rs"

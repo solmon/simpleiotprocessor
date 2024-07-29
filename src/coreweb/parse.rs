@@ -3,11 +3,13 @@ use config::*;
 pub mod response;
 pub use response::*;
 use serde_json::Value;
+use std::str::FromStr;
 
 use super::*;
 use anyhow::{anyhow, Result};
 
-const CONFIG: &str = include_str!("../../device-only-domains.conf");
+//const CONFIG: &str = include_str!("../../device.conf");
+const CONFIG: &str = "Sample Config";
 
 fn get_config() -> Result<Config> {
     CONFIG.parse::<Config>()
@@ -21,7 +23,7 @@ fn parse() {
 
 #[test]
 fn test_parsing() {
-    let parse = std::fs::read_to_string("./device-only-domains.conf").unwrap();
+    let parse = std::fs::read_to_string("./device.conf").unwrap();
     let config = toml::from_str::<Config>(&parse).map_err(|e| anyhow!(e));
     assert!(config.is_ok())
 }

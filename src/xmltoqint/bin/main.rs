@@ -17,7 +17,7 @@ fn all_tasks() -> Vec<BoxFuture<'static, ()>> {
 async fn process_shift() {
     
     println!("called process shift");
-    let input = rtftp::getmessage("one").unwrap();
+    let input = simpleftp::getmessage("one").unwrap();
 
     let processed = ddshift::transform(input.as_str());
 

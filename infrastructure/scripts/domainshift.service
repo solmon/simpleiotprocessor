@@ -1,0 +1,16 @@
+[Unit]
+Description=Rieter Shift Integration Service
+
+[Service]
+Type=notify
+ExecStart=/usr/src/myapp/target/release/rtdomain
+StandardOutput=null
+Restart=on-failure
+
+# Increase the default a bit in order to allow many simultaneous
+# files to be monitored, we might need a lot of fds.
+LimitNOFILE=16384
+
+[Install]
+WantedBy=multi-user.target
+Alias=rtdomainshift.service

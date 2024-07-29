@@ -1,0 +1,12 @@
+[package]
+name = "rbmq"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+amiquip = { version = "0.4", default-features = false }
+serde = "1.0"
+serde_derive = "1.0"

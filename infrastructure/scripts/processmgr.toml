@@ -1,0 +1,14 @@
+[processes.rtdomain]
+command = "./bin/rtdomain"
+# shell = "/bin/sh"
+
+[processes.webserver]
+command = "./bin/webserver"
+# shell = "/bin/sh"
+
+# [processes.baz]
+# command = "for i in 1 2; do echo baz; sleep 3; done;"
+# # shell = "/bin/sh"
+
+# [processes.qux]
+# command = "/usr/bin/sleep 20"

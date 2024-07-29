@@ -1,0 +1,18 @@
+[processes.rtdomain]
+command = "/home/solmon/github/tenantdatamesh/target/debug/rtdomain"
+shell = "/bin/sh"
+
+# [processes.webserver]
+# command = "/home/solmon/github/tenantdatamesh/target/debug/webserver"
+# shell = "/bin/sh"
+
+[processes.coreweb]
+command = "/home/solmon/github/tenantdatamesh/target/debug/coreweb"
+# shell = "/bin/sh"
+
+# [processes.baz]
+# command = "for i in 1 2; do echo baz; sleep 3; done;"
+# # shell = "/bin/sh"
+
+# [processes.qux]
+# command = "/usr/bin/sleep 20"

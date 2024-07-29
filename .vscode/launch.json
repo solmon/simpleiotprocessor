@@ -1,0 +1,343 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'ddshift'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=ddshift"
+                ],
+                "filter": {
+                    "name": "ddshift",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'rbmq'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=rbmq"
+                ],
+                "filter": {
+                    "name": "rbmq",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'rtcore'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=rtcore"
+                ],
+                "filter": {
+                    "name": "rtcore",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'rtftp'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=rtftp"
+                ],
+                "filter": {
+                    "name": "rtftp",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'webserver'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=webserver",
+                    "--package=webdev"
+                ],
+                "filter": {
+                    "name": "webserver",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'webserver'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=webserver",
+                    "--package=webdev"
+                ],
+                "filter": {
+                    "name": "webserver",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'rtdomain'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=rtdomain",
+                    "--package=webdev"
+                ],
+                "filter": {
+                    "name": "rtdomain",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'rtdomain'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=rtdomain",
+                    "--package=webdev"
+                ],
+                "filter": {
+                    "name": "rtdomain",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'pmgr'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=pmgr",
+                    "--package=webdev"                    
+                ],
+                "filter": {
+                    "name": "pmgr",
+                    "kind": "bin"
+                }
+            },
+            "args": ["processmgr.toml"],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'pmgr'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=pmgr",
+                    "--package=webdev"
+                ],
+                "filter": {
+                    "name": "pmgr",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'webdev'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=webdev",
+                    "--package=webdev"
+                ],
+                "filter": {
+                    "name": "webdev",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'webdev'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=webdev",
+                    "--package=webdev"
+                ],
+                "filter": {
+                    "name": "webdev",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'newweb'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=newweb",
+                    "--package=webdev"
+                ],
+                "filter": {
+                    "name": "newweb",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'newweb'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=newweb",
+                    "--package=webdev"
+                ],
+                "filter": {
+                    "name": "newweb",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'pmgr'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=pmgr",
+                    "--package=webdev"
+                ],
+                "filter": {
+                    "name": "pmgr",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'pmgr'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=pmgr",
+                    "--package=webdev"
+                ],
+                "filter": {
+                    "name": "pmgr",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'ipcm'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=ipcm",
+                    "--package=webdev"
+                ],
+                "filter": {
+                    "name": "ipcm",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'ipcm'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=ipcm",
+                    "--package=webdev"
+                ],
+                "filter": {
+                    "name": "ipcm",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

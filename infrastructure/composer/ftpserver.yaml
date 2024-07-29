@@ -1,0 +1,29 @@
+version: '3'
+services:
+  ftp-server:
+    container_name: my-ftp-server
+    environment:
+      - USERS=one|1234ftpuser
+    image: delfer/alpine-ftp-server
+    ports:
+      - 21:21/tcp
+    volumes:
+      - /home/solmon/ftpdata:/data
+  rabbitmq:
+    container_name: my-rabbitmq
+    image: bitnami/rabbitmq:latest
+    environment:
+      - RABBITMQ_USERNAME=admin
+      - RABBITMQ_PASSWORD=bitnami1
+      - RABBITMQ_SECURE_PASSWORD=no
+      - RABBITMQ_MANAGEMENT_ALLOW_WEB_ACCESS=yes
+    ports:
+      - 5672:5672
+      - 15672:15672
+  # iotgateway:
+  #   container_name: my-iot-gateway
+  #   image: rt-iot-gateway:latest
+  #   ports:
+  #     - 7878:7878
+  #   environment:
+  #     - FTP_CONN=host.docker.internal:21

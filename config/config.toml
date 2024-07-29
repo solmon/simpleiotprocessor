@@ -1,0 +1,6 @@
+server_name = "iot-gateway"
+bind_address = "0.0.0.0:8000"
+
+[logging]
+level = "debug"
+

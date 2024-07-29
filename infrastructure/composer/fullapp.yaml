@@ -1,0 +1,18 @@
+version: '3'
+networks:
+  app-tier:
+    driver: bridge
+services:
+  ftp-server:
+    container_name: my-ftp-server
+    environment:
+      - USERS=one|1234ftpuser
+    image: delfer/alpine-ftp-server
+    ports:
+      - 21:21/tcp
+    volumes:
+      - /home/solmon/ftpdata:/data
+  rabbitmq:
+    image: bitnami/rabbitmq:latest
+    networks: app-tier
+    

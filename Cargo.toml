@@ -50,11 +50,3 @@ actix-cors = "0.7.0"
 simpleftp = { path = "crates/simpleftp" }
 rbmq = { path = "crates/rbmq" }
 ddshift = { path = "crates/ddshift" }
-
-# [[example]]
-# name = "statusweb"
-# path = "src/simweb/server.rs"
-
-# [[example]]
-# name = "pmgr"
-# path = "src/pmm/pmmgr.rs"

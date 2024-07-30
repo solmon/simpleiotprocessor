@@ -1,5 +1,4 @@
 use chrono::{DateTime, Utc};
-
 use serde::Serialize;
 
 #[derive(Debug, Clone)]
@@ -38,6 +37,7 @@ pub struct ProcessLogRecord {
 }
 
 impl Logger {
+  /// Creates a new instance of `Logger`.
   pub fn new() -> Self {
     Self {
       names: vec![
@@ -46,20 +46,44 @@ impl Logger {
     }
   }
 
+  /// Registers a new name in the logger.
+  ///
+  /// # Arguments
+  ///
+  /// * `name` - The name to register.
   pub fn register_name(&mut self, name: &str) {
     let name = format!("proc.{}", name);
     let pos = self.search_name(&name).unwrap_or_else(|pos| pos);
     self.names.insert(pos, name);
   }
 
+  /// Searches for a name in the logger.
+  ///
+  /// # Arguments
+  ///
+  /// * `name` - The name to search for.
+  ///
+  /// # Returns
+  ///
+  /// * `Result<usize, usize>` - The index of the found name, or the index where the name should be inserted.
   fn search_name(&self, name: &str) -> Result<usize, usize> {
     self.names.binary_search_by(|s| s.len().cmp(&name.len()).reverse())
   }
 
+  /// Returns the length of the longest name in the logger.
+  ///
+  /// # Returns
+  ///
+  /// * `usize` - The length of the longest name.
   fn longest_name(&self) -> usize {
     self.names[0].len()
   }
 
+  /// Logs a record to the appropriate stream.
+  ///
+  /// # Arguments
+  ///
+  /// * `record` - The log record to be logged.
   pub fn log(&self, record: LogRecord) {
     let (name, stream, line) = match record {
       LogRecord::Controller { stream, record } => {

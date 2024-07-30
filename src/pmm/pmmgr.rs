@@ -4,7 +4,6 @@ use command_group::Signal;
 use std::path::PathBuf;
 use clap::Parser;
 
-
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
 struct Cli {
@@ -38,6 +37,10 @@ async fn main() {
   }
 }
 
+/// Runs the main processing logic.
+///
+/// This function takes the command line arguments (`args`) and a logger (`logger`) as input,
+/// and returns a `Result` indicating whether the processing was successful or not.
 async fn run(args: Cli, mut logger: log::Logger) -> anyhow::Result<bool> {
   let config = cfg::Config::load(&args.config_path)?;
 
@@ -52,7 +55,6 @@ async fn run(args: Cli, mut logger: log::Logger) -> anyhow::Result<bool> {
 
   for (name, process) in config.processes.iter() {
     let (signal_tx, signal_rx) = channel(1);
-    // let exit_tx = exit_tx.clone();
 
     let logger = logger.clone();
     let name = name.clone();
@@ -61,9 +63,9 @@ async fn run(args: Cli, mut logger: log::Logger) -> anyhow::Result<bool> {
     tasks.spawn(async move {
       let res = proc::run(&name, proc_cfg, signal_rx, &logger).await;
 
-      let success = match res {
+      match res {
         Ok(success) => success,
-        Err(err) =>{
+        Err(err) => {
           logger.log(log::LogRecord::Controller {
             stream: log::LogStream::Stderr,
             record: log::ControllerLogRecord::new(err.to_string()),
